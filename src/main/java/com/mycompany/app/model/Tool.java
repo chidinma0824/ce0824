@@ -1,4 +1,4 @@
-package com.mycompany.app;
+package com.mycompany.app.model;
 
 public class Tool {
 	private String code;

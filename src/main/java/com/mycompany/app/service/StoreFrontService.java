@@ -1,4 +1,4 @@
-package com.mycompany.app;
+package com.mycompany.app.service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -7,7 +7,14 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 
-public class StoreFront {
+import org.springframework.stereotype.Service;
+
+import com.mycompany.app.model.Tool;
+import com.mycompany.app.model.Tools;
+
+@Service
+public class StoreFrontService {
+	
 	private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/yy");
 	private LocalDate checkout;
 	private LocalDate dueDate;
@@ -16,6 +23,7 @@ public class StoreFront {
 	private Double discountAmt;
 	private Double finalAmt;
 	private Tool tool;
+	
 	
 	public String checkout(String code, String checkoutDate, Integer numRentalDays, Integer discount) throws Exception {
 		//Validate number of rental days and discount amount before processing
